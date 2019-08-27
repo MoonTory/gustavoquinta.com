@@ -1,9 +1,16 @@
 import React, { FunctionComponent, PropsWithChildren, Fragment } from 'react'
 
+import { Header } from './Header'
+
 interface Props {}
 
 export const Layout: FunctionComponent<PropsWithChildren<Props>> = ({
   children
 }) => {
-  return <Fragment>{children}</Fragment>
+  return (
+    <Fragment>
+      <Header />
+      {children}
+    </Fragment>
+  )
 }
