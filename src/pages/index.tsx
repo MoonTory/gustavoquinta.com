@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 
-import { Layout } from '../templates/Layout'
+import { Layout } from 'templates/Layout'
 
 interface Props {}
 
