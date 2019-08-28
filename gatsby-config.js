@@ -6,5 +6,16 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ['gatsby-plugin-typescript', 'gatsby-plugin-sass']
+  siteMetadata: {
+    title: `Portfolio Blog`,
+    author: `Gustavo Quinta | MoonTory`,
+    description: `Welcome`,
+    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`
+  },
+  /* Plugins */
+  plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet'
+  ]
 }
