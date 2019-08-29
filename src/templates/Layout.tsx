@@ -1,18 +1,22 @@
 import React, { FunctionComponent, PropsWithChildren, Fragment } from 'react'
 
-import { SEO } from 'components/SEO'
-import { Header } from './Header'
+import { Header, Footer, SEO } from 'components'
 
-interface Props {}
+interface Props {
+  location: Location
+}
 
 export const Layout: FunctionComponent<PropsWithChildren<Props>> = ({
-  children
+  children,
+  ...props
 }) => {
+  console.log('props', props)
   return (
-    <Fragment>
-      <SEO lang="en" title="Gustavo Quinta | MoonTory" />
-      <Header />
-      {children}
-    </Fragment>
+    <div>
+      <SEO lang="en" />
+      <Header {...props} />
+      <main style={{ minHeight: '100vh' }}>{children}</main>
+      <Footer />
+    </div>
   )
 }
