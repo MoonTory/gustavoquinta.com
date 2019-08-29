@@ -14,8 +14,19 @@ module.exports = {
   },
   /* Plugins */
   plugins: [
+    // Typescript
     'gatsby-plugin-typescript',
+    // SASS
     'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet'
+    // React Helmet
+    'gatsby-plugin-react-helmet',
+    // File system
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/assets`,
+        name: 'assets'
+      }
+    }
   ]
 }
