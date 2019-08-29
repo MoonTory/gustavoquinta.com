@@ -1,22 +1,32 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
+import { Link } from 'gatsby'
 
-interface Props {}
+interface Props {
+  location: Location
+}
 
 export const Header: FunctionComponent<Props> = () => {
+  const [isActive, setIsActive] = useState(false)
+
+  const handleMenuClick = () => {
+    setIsActive(!isActive)
+  }
+
   return (
-    <nav className="navbar is-dark">
+    <nav className="navbar is-link">
       <div className="navbar-brand">
-        <a className="navbar-item" href="#">
+        <Link className="navbar-item" to="/">
           <img
             src="https://bulma.io/images/bulma-logo.png"
             alt="Bulma: a modern CSS framework based on Flexbox"
             width="112"
             height="28"
           />
-        </a>
+        </Link>
         <div
-          className="navbar-burger burger"
+          className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
           data-target="navbarExampleTransparentExample"
+          onClick={handleMenuClick}
         >
           <span></span>
           <span></span>
@@ -24,38 +34,34 @@ export const Header: FunctionComponent<Props> = () => {
         </div>
       </div>
 
-      <div id="navbarExampleTransparentExample" className="navbar-menu">
+      <div
+        id="navbarExampleTransparentExample"
+        className={`navbar-menu ${isActive ? 'is-active' : ''}`}
+      >
         <div className="navbar-start">
-          <a className="navbar-item" href="#">
+          <Link className="navbar-item" to="/">
             Home
-          </a>
+          </Link>
         </div>
 
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="field is-grouped">
               <p className="control">
-                <a
-                  className="bd-tw-button button"
-                  data-social-network="Twitter"
-                  data-social-action="tweet"
-                  data-social-target="http://localhost:4000"
-                  target="_blank"
-                  href="#"
-                >
+                <Link className="bd-tw-button button" to="/">
                   <span className="icon">
                     <i className="fab fa-twitter"></i>
                   </span>
                   <span>Tweet</span>
-                </a>
+                </Link>
               </p>
               <p className="control">
-                <a className="button is-primary" href="#">
+                <Link className="button is-primary" to="/">
                   <span className="icon">
                     <i className="fas fa-download"></i>
                   </span>
                   <span>Download</span>
-                </a>
+                </Link>
               </p>
             </div>
           </div>
