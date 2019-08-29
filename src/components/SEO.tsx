@@ -7,51 +7,30 @@
 
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+
+import { useSiteMetadata } from 'hooks/useSiteMetadata'
 
 interface Props {
-  description?: string
   lang?: string
   meta?: any[]
-  title?: string
 }
 
-export const SEO: FunctionComponent<Props> = ({
-  description,
-  lang,
-  meta,
-  title
-}) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-  const metaDescription = description || site.siteMetadata.description
+export const SEO: FunctionComponent<Props> = ({ lang, meta }) => {
+  const { title, description, author } = useSiteMetadata()
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang
-      }}
-      title={title ? title : site.siteMetadata.title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      htmlAttributes={{ lang }}
+      title={title}
+      titleTemplate={`%s | ${author}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: description
         },
         {
           name: `author`,
-          content: site.siteMetadata.author
+          content: author
         },
         {
           property: `og:title`,
@@ -59,7 +38,7 @@ export const SEO: FunctionComponent<Props> = ({
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: description
         },
         {
           property: `og:type`,
