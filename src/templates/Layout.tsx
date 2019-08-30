@@ -10,13 +10,12 @@ export const Layout: FunctionComponent<PropsWithChildren<Props>> = ({
   children,
   ...props
 }) => {
-  console.log('props', props)
   return (
-    <div>
+    <Fragment>
       <SEO lang="en" />
       <Header {...props} />
       <main style={{ minHeight: '100vh' }}>{children}</main>
       <Footer />
-    </div>
+    </Fragment>
   )
 }

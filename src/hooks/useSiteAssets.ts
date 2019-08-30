@@ -18,6 +18,5 @@ export function useSiteAssets() {
       }
     `
   )
-  console.log('data', data)
   return data.allFile.nodes as SiteAssets[]
 }

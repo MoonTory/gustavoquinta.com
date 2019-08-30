@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
 
-import { useWindowDimensions } from 'hooks/useWindowDimensions'
-import { useSiteAssets } from 'hooks/useSiteAssets'
+import { useWindowDimensions, useSiteAssets } from 'hooks'
 
 interface Props {}
 
@@ -9,10 +8,7 @@ export const Footer: FunctionComponent<Props> = () => {
   const { width } = useWindowDimensions()
   const data = useSiteAssets()
 
-  console.log('data', data)
-
-  // Default margin style for footer's second level.
-  const marginStyle = { margin: '0 1rem 0 1rem' }
+  const defaultMargin = { margin: '0 1rem 0 1rem' }
 
   return (
     <div className="container has-background-link is-fluid is-marginless has-text-white">
@@ -25,7 +21,7 @@ export const Footer: FunctionComponent<Props> = () => {
       <div className="columns">
         <div
           className={`column ${width < 1024 ? 'has-text-centered' : ''}`}
-          style={marginStyle}
+          style={defaultMargin}
         >
           Copyright &copy; {new Date().getFullYear()} - Gustavo Quinta
         </div>
@@ -33,7 +29,7 @@ export const Footer: FunctionComponent<Props> = () => {
           className={`column ${
             width < 1024 ? 'has-text-centered' : 'has-text-right'
           }`}
-          style={marginStyle}
+          style={defaultMargin}
         >
           Made with{' '}
           <img
