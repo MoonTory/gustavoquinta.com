@@ -20,21 +20,15 @@ export const Footer: FunctionComponent<Props> = () => {
       </div>
       <div className="columns">
         <div
-          className={`column ${width < 1024 ? 'has-text-centered' : ''}`}
-          style={defaultMargin}
-        >
-          Copyright &copy; {new Date().getFullYear()} - Gustavo Quinta
-        </div>
-        <div
           className={`column ${
-            width < 1024 ? 'has-text-centered' : 'has-text-right'
+            width < 1024 ? 'has-text-centered' : 'has-text-centered'
           }`}
           style={defaultMargin}
         >
-          Made with{' '}
+          &copy; Gustavo Quinta • {new Date().getFullYear()} • Built with{' '}
           <img
-            height="20px"
-            width="15px"
+            height="16px"
+            width="16px"
             src={data[0].publicURL}
             alt="GatsbyJs"
           />
