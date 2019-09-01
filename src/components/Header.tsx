@@ -8,10 +8,6 @@ interface Props {
 export const Header: FunctionComponent<Props> = () => {
   const [isActive, setIsActive] = useState(false)
 
-  const handleMenuClick = () => {
-    setIsActive(!isActive)
-  }
-
   return (
     <nav className="navbar is-link">
       <div className="navbar-brand">
@@ -26,7 +22,7 @@ export const Header: FunctionComponent<Props> = () => {
         <div
           className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
           data-target="navbarExampleTransparentExample"
-          onClick={handleMenuClick}
+          onClick={() => setIsActive(!isActive)}
         >
           <span></span>
           <span></span>
