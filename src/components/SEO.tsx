@@ -8,20 +8,21 @@
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 
-import { useSiteMetadata } from 'hooks/useSiteMetadata'
+import { useSiteMetadata } from 'hooks'
 
 interface Props {
   lang?: string
   meta?: any[]
+  headerTitle?: string
 }
 
-export const SEO: FunctionComponent<Props> = ({ lang, meta }) => {
+export const SEO: FunctionComponent<Props> = ({ lang, meta, headerTitle }) => {
   const { title, description, author } = useSiteMetadata()
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
-      title={title}
+      title={headerTitle ? headerTitle : title}
       titleTemplate={`%s | ${author}`}
       meta={[
         {
