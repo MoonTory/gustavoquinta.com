@@ -12,7 +12,6 @@ export const Layout: FunctionComponent<PropsWithChildren<Props>> = ({
 }) => {
   return (
     <Fragment>
-      <SEO lang="en" />
       <Header {...props} />
       <main style={{ minHeight: '100vh' }}>{children}</main>
       <Footer />
