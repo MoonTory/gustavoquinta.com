@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Portfolio Blog`,
-    author: `Gustavo Quinta | MoonTory`,
+    author: `Gustavo Quinta`,
     description: `Welcome`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`
   },
