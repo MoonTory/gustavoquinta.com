@@ -7,7 +7,7 @@ interface Props {
   location: Location
 }
 
-const index: FunctionComponent<Props> = props => {
+const Index: FunctionComponent<Props> = props => {
   return (
     <Layout {...props}>
       <SEO lang="en" headerTitle="Home" />
@@ -16,4 +16,4 @@ const index: FunctionComponent<Props> = props => {
   )
 }
 
-export default index
+export default Index
