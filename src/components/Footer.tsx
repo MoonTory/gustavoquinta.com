@@ -1,13 +1,11 @@
 import React, { FunctionComponent } from 'react'
 
-import { useWindowDimensions, useSiteAssets } from 'hooks'
+import { useGatsbyLogo } from 'hooks'
 
 interface Props {}
 
 export const Footer: FunctionComponent<Props> = () => {
-  const { width } = useWindowDimensions()
-  const data = useSiteAssets()
-
+  const logo = useGatsbyLogo()
   const defaultMargin = { margin: '0 1rem 0 1rem' }
 
   return (
@@ -19,19 +17,9 @@ export const Footer: FunctionComponent<Props> = () => {
         <div className="column">Section 4</div>
       </div>
       <div className="columns">
-        <div
-          className={`column ${
-            width < 1024 ? 'has-text-centered' : 'has-text-centered'
-          }`}
-          style={defaultMargin}
-        >
+        <div className="column has-text-centered" style={defaultMargin}>
           &copy; Gustavo Quinta • {new Date().getFullYear()} • Built with{' '}
-          <img
-            height="16px"
-            width="16px"
-            src={data[0].publicURL}
-            alt="GatsbyJs"
-          />
+          <img height="16px" width="16px" src={logo.publicURL} alt="GatsbyJs" />
         </div>
       </div>
     </div>
