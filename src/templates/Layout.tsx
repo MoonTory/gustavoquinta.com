@@ -1,12 +1,12 @@
 import React, { FunctionComponent, PropsWithChildren, Fragment } from 'react'
 
-import { Header, Footer, SEO } from 'components'
+import { Header, Footer } from 'components'
 
 interface Props {
   location: Location
 }
 
-export const Layout: FunctionComponent<PropsWithChildren<Props>> = ({
+export const MainLayout: FunctionComponent<PropsWithChildren<Props>> = ({
   children,
   ...props
 }) => {
