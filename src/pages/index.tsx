@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
-import { Layout } from 'templates/Layout'
-import { SEO } from 'components'
+import { MainLayout } from 'templates/Layout'
+import { SEO, Jumbotron } from 'components'
 
 interface Props {
   location: Location
@@ -9,10 +9,11 @@ interface Props {
 
 const Index: FunctionComponent<Props> = props => {
   return (
-    <Layout {...props}>
+    <MainLayout {...props}>
       <SEO lang="en" headerTitle="Home" />
-      Hello Gatsby.js!
-    </Layout>
+      <Jumbotron title="Medium Title" subTitle="Medium Subtitle" />
+      <div className="container has-text-centered">Hello Gatsby.js!</div>
+    </MainLayout>
   )
 }
 
