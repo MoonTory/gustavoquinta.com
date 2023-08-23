@@ -28,24 +28,24 @@ export function Hero() {
   return (
     <div className="mb-6 sticky top-[7rem] mt-12 lg:mt-0">
       <div className="flex items-center space-x-6 py-6">
-        <img
+        {/* <img
           src="/profile-pic.jpeg"
           width="256"
           height="256"
           className="flex-none rounded-full object-cover border-white border-2"
-        />
+        /> */}
         <div className="flex-auto">
           <h1
             style={josefin.style}
-            className="text-5xl lg:text-6xl leading-tight lg:leading-tight font-black"
+            className="uppercase tracking-widest text-5xl lg:text-6xl leading-tight lg:leading-tight font-thin"
           >
-            Hey, I&apos;m
-            <br />
+            {/* Hey, I&apos;m
+            <br /> */}
             Gustavo Quinta<span className="text-brand">.</span>
           </h1>
           <h2
             style={josefin.style}
-            className="text-1xl lg:text-2xl tracking-widest text-brand align-bottom mt-8"
+            className="text-1xl lg:text-2xl tracking-widest text-brand align-bottom mt-4"
           >
             SOFTWARE ENGINEER
           </h2>

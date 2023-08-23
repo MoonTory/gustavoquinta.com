@@ -5,10 +5,8 @@ import { useState } from 'react';
 import { Navbar } from '~/components';
 import { Left } from '~/components/left';
 import { Right } from '~/components/right';
-import { Sidebar } from '~/components/sidebar/Sidebar';
-import { Clouds, Moon, Stars, Waves } from '~/components/effects';
-
-// const words: string[] = ["TypeScript", "Is", "Awesome"];
+import { Sidebar } from '~/components/sidebar';
+import { Clouds, Moon, Stars, AnimatedWaves } from '~/components/effects';
 
 export default function Home() {
   const [section, setSection] = useState('work');
@@ -20,10 +18,10 @@ export default function Home() {
         <meta name="description" content="Portfolio & Blog" />
       </Head>
 
-      <Moon />
       <Clouds />
       <Stars />
-      <Waves />
+      <Moon />
+      <AnimatedWaves />
 
       <Navbar />
       <Sidebar section={section} />
