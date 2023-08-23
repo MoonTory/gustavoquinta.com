@@ -1,6 +1,6 @@
-"use client";
-import React from "react";
-import styles from "./styles.module.css";
+'use client';
+import React from 'react';
+import styles from './styles.module.css';
 
 export type CursorProps = {
   cursorColor?: string;
@@ -9,16 +9,14 @@ export type CursorProps = {
 };
 
 const MemoizedCursor: React.FC<CursorProps> = ({
-  cursorStyle = "|",
+  cursorStyle = '|',
   cursorBlinking = true,
-  cursorColor = "inherit",
+  cursorColor = 'inherit'
 }) => {
   return (
     <span
       style={{ color: cursorColor }}
-      className={`${styles.blinkingCursor} ${
-        cursorBlinking ? styles.blinking : ""
-      }`}
+      className={`${styles.blinkingCursor} ${cursorBlinking ? styles.blinking : ''}`}
     >
       {cursorStyle}
     </span>

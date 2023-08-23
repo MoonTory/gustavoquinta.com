@@ -1,17 +1,17 @@
-"use client";
-import Head from "next/head";
-import { useState } from "react";
+'use client';
+import Head from 'next/head';
+import { useState } from 'react';
 
-import { Navbar } from "~/components";
-import { Left } from "~/components/left";
-import { Right } from "~/components/right";
-import { Sidebar } from "~/components/sidebar/Sidebar";
-import { Clouds, Moon, Stars, Waves } from "~/components/effects";
+import { Navbar } from '~/components';
+import { Left } from '~/components/left';
+import { Right } from '~/components/right';
+import { Sidebar } from '~/components/sidebar/Sidebar';
+import { Clouds, Moon, Stars, Waves } from '~/components/effects';
 
 // const words: string[] = ["TypeScript", "Is", "Awesome"];
 
 export default function Home() {
-  const [section, setSection] = useState("work");
+  const [section, setSection] = useState('work');
   return (
     <div>
       <Head>

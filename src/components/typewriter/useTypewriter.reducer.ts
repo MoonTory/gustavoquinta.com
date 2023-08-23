@@ -5,37 +5,34 @@ export type TypewriterState = {
 };
 
 export type TypewriterAction =
-  | { type: "COUNT" }
-  | { type: "DELAY"; payload: number }
-  | { type: "TYPE"; payload: string; speed: number }
-  | { type: "DELETE"; payload: string; speed: number };
+  | { type: 'COUNT' }
+  | { type: 'DELAY'; payload: number }
+  | { type: 'TYPE'; payload: string; speed: number }
+  | { type: 'DELETE'; payload: string; speed: number };
 
-export const reducer = (
-  state: TypewriterState,
-  action: TypewriterAction
-): TypewriterState => {
+export const reducer = (state: TypewriterState, action: TypewriterAction): TypewriterState => {
   switch (action.type) {
-    case "TYPE":
+    case 'TYPE':
       return {
         ...state,
         speed: action.speed,
-        text: action.payload?.substring(0, state.text.length + 1),
+        text: action.payload?.substring(0, state.text.length + 1)
       };
-    case "DELAY":
+    case 'DELAY':
       return {
         ...state,
-        speed: action.payload,
+        speed: action.payload
       };
-    case "DELETE":
+    case 'DELETE':
       return {
         ...state,
         speed: action.speed,
-        text: action.payload?.substring(0, state.text.length - 1),
+        text: action.payload?.substring(0, state.text.length - 1)
       };
-    case "COUNT":
+    case 'COUNT':
       return {
         ...state,
-        count: state.count + 1,
+        count: state.count + 1
       };
     default:
       return state;

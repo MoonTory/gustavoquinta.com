@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
+import React, { useEffect, useState } from 'react';
+import { motion, useTransform, useScroll } from 'framer-motion';
 
 const NUM_STARS = 150;
 
@@ -26,7 +26,7 @@ function StarsMemo() {
         scrollPos,
         scrollParams,
         horizontalPos,
-        bottomInitial,
+        bottomInitial
       });
     }
 
@@ -46,17 +46,15 @@ function StarsMemo() {
 
   return (
     <div className="w-full h-[100vh] fixed top-0 left-0 right-0  z-0">
-      {stars.map(
-        ({ key, scrollPos, scrollParams, horizontalPos, bottomInitial }) => (
-          <Star
-            key={key}
-            scrollPos={scrollPos}
-            scrollParams={scrollParams}
-            horizontalPos={horizontalPos}
-            bottomInitial={bottomInitial}
-          />
-        )
-      )}
+      {stars.map(({ key, scrollPos, scrollParams, horizontalPos, bottomInitial }) => (
+        <Star
+          key={key}
+          scrollPos={scrollPos}
+          scrollParams={scrollParams}
+          horizontalPos={horizontalPos}
+          bottomInitial={bottomInitial}
+        />
+      ))}
     </div>
   );
 }
@@ -68,8 +66,8 @@ export const Stars = React.memo(StarsMemo, () => {
 const Star = ({
   scrollPos = [0, 8250],
   scrollParams = [0, -2000],
-  horizontalPos = "12px",
-  bottomInitial = "-50vh",
+  horizontalPos = '12px',
+  bottomInitial = '-50vh'
 }: {
   scrollPos: number[];
   scrollParams: number[];
@@ -79,8 +77,7 @@ const Star = ({
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, scrollPos, scrollParams);
 
-  const getRandValue = (max: number, min = 0) =>
-    Math.floor(Math.random() * (max - min) + min);
+  const getRandValue = (max: number, min = 0) => Math.floor(Math.random() * (max - min) + min);
 
   const widthHeight = getRandValue(6, 1);
 
@@ -93,7 +90,7 @@ const Star = ({
         width: widthHeight,
         height: widthHeight,
         bottom: bottomInitial,
-        right: horizontalPos,
+        right: horizontalPos
       }}
     />
   );
@@ -117,7 +114,7 @@ const scrollPosValues = [
   [0, 22000],
   [0, 23000],
   [0, 24000],
-  [0, 25000],
+  [0, 25000]
 ];
 
 const scrollParamsValues = [
@@ -134,118 +131,118 @@ const scrollParamsValues = [
   [0, -1250],
   [0, -1500],
   [0, -1750],
-  [0, -2000],
+  [0, -2000]
 ];
 
 const horizontalPosValues = [
-  "3%",
-  "6%",
-  "9%",
-  "12%",
-  "15%",
-  "18%",
-  "21%",
-  "24%",
-  "27%",
-  "30%",
-  "33%",
-  "36%",
-  "39%",
-  "42%",
-  "45%",
-  "48%",
-  "51%",
-  "54%",
-  "57%",
-  "60%",
-  "63%",
-  "66%",
-  "69%",
-  "72%",
-  "75%",
-  "78%",
-  "81%",
-  "84%",
-  "87%",
-  "90%",
-  "93%",
-  "96%",
-  "99%",
+  '3%',
+  '6%',
+  '9%',
+  '12%',
+  '15%',
+  '18%',
+  '21%',
+  '24%',
+  '27%',
+  '30%',
+  '33%',
+  '36%',
+  '39%',
+  '42%',
+  '45%',
+  '48%',
+  '51%',
+  '54%',
+  '57%',
+  '60%',
+  '63%',
+  '66%',
+  '69%',
+  '72%',
+  '75%',
+  '78%',
+  '81%',
+  '84%',
+  '87%',
+  '90%',
+  '93%',
+  '96%',
+  '99%',
   // ---
-  "3%",
-  "6%",
-  "9%",
-  "12%",
-  "15%",
-  "18%",
-  "21%",
-  "24%",
-  "27%",
-  "30%",
-  "33%",
-  "36%",
-  "39%",
-  "42%",
-  "45%",
-  "48%",
-  "51%",
-  "54%",
-  "57%",
-  "60%",
-  "63%",
-  "66%",
-  "69%",
-  "72%",
-  "75%",
-  "78%",
-  "81%",
-  "84%",
-  "87%",
-  "90%",
-  "93%",
-  "96%",
-  "99%",
+  '3%',
+  '6%',
+  '9%',
+  '12%',
+  '15%',
+  '18%',
+  '21%',
+  '24%',
+  '27%',
+  '30%',
+  '33%',
+  '36%',
+  '39%',
+  '42%',
+  '45%',
+  '48%',
+  '51%',
+  '54%',
+  '57%',
+  '60%',
+  '63%',
+  '66%',
+  '69%',
+  '72%',
+  '75%',
+  '78%',
+  '81%',
+  '84%',
+  '87%',
+  '90%',
+  '93%',
+  '96%',
+  '99%'
 ];
 
 const bottomInitValues = [
-  "0vh",
-  "-5vh",
-  "-10vh",
-  "-15vh",
-  "-20vh",
-  "-25vh",
-  "-30vh",
-  "-35vh",
-  "-40vh",
-  "-45vh",
-  "-50vh",
-  "-55vh",
-  "-60vh",
-  "-65vh",
-  "-70vh",
-  "-75vh",
-  "-80vh",
-  "-85vh",
-  "-90vh",
-  "-95vh",
+  '0vh',
+  '-5vh',
+  '-10vh',
+  '-15vh',
+  '-20vh',
+  '-25vh',
+  '-30vh',
+  '-35vh',
+  '-40vh',
+  '-45vh',
+  '-50vh',
+  '-55vh',
+  '-60vh',
+  '-65vh',
+  '-70vh',
+  '-75vh',
+  '-80vh',
+  '-85vh',
+  '-90vh',
+  '-95vh',
   // ---
-  "5vh",
-  "10vh",
-  "15vh",
-  "20vh",
-  "25vh",
-  "30vh",
-  "35vh",
-  "40vh",
-  "45vh",
-  "50vh",
-  "55vh",
-  "60vh",
-  "65vh",
-  "70vh",
-  "75vh",
-  "80vh",
-  "85vh",
-  "90vh",
-  "95vh",
+  '5vh',
+  '10vh',
+  '15vh',
+  '20vh',
+  '25vh',
+  '30vh',
+  '35vh',
+  '40vh',
+  '45vh',
+  '50vh',
+  '55vh',
+  '60vh',
+  '65vh',
+  '70vh',
+  '75vh',
+  '80vh',
+  '85vh',
+  '90vh',
+  '95vh'
 ];

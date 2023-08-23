@@ -1,2 +1,2 @@
-export * from "./Typewriter";
-export * from "./useTypewriter.effect";
+export * from './Typewriter';
+export * from './useTypewriter.effect';

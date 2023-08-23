@@ -1,5 +1,5 @@
-import React from "react";
-import { motion, Variants, useAnimation } from "framer-motion";
+import React from 'react';
+import { motion, Variants, useAnimation } from 'framer-motion';
 
 export const SideLink: React.FC<{
   text: string;
@@ -10,39 +10,40 @@ export const SideLink: React.FC<{
 
   const animation: Variants = {
     selected: {
-      backgroundColor: "bg-brand",
-      height: "24px",
+      backgroundColor: 'bg-brand',
+      height: '32px',
       transition: {
-        damping: 40,
-        duration: 0.25,
-      },
+        type: 'spring',
+        stiffness: 150,
+        duration: 0.25
+      }
     },
     idle: {
-      backgroundColor: "bg-white",
-      height: "16px",
-    },
+      backgroundColor: 'bg-white',
+      height: '16px'
+    }
   };
 
   const onMouseEnter = () => {
     setSelected(true);
-    controls.start("selected");
+    controls.start('selected');
   };
 
   const onMouseLeave = () => {
     setSelected(false);
-    controls.start("idle");
+    controls.start('idle');
   };
 
   const navigate = () => {
     setSelected(true);
-    controls.start("selected");
+    controls.start('selected');
     const el = document.getElementById(text.toLowerCase());
-    el?.scrollIntoView({ behavior: "smooth" });
+    el?.scrollIntoView({ behavior: 'smooth' });
   };
 
   React.useEffect(() => {
-    if (inView) controls.start("selected");
-    else controls.start("idle");
+    if (inView) controls.start('selected');
+    else controls.start('idle');
   }, [selected, inView]);
 
   return (
@@ -50,7 +51,7 @@ export const SideLink: React.FC<{
       onClick={navigate}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      style={{ writingMode: "vertical-rl" }}
+      style={{ writingMode: 'vertical-rl' }}
       className="pt-4 pb-4 ml-2 mr-2 cursor-pointer"
     >
       <motion.div
@@ -58,14 +59,10 @@ export const SideLink: React.FC<{
         animate={controls}
         variants={animation}
         className={`w-[1px] h-[16px] transition-colors ${
-          selected || inView ? "bg-brand" : "bg-white"
+          selected || inView ? 'bg-brand' : 'bg-white'
         }`}
       />
-      <div
-        className={`transition-colors ${
-          selected || inView ? "text-brand" : "text-white"
-        }`}
-      >
+      <div className={`transition-colors ${selected || inView ? 'text-brand' : 'text-white'}`}>
         {text.toUpperCase()}
       </div>
     </div>
@@ -73,17 +70,17 @@ export const SideLink: React.FC<{
 };
 
 export const Sidebar: React.FC<{ section: string }> = ({ section }) => {
-  const links = ["work", "projects", "education", "misc"];
+  const links = ['work', 'projects', 'education', 'misc'];
   const animations: Variants = {
     hidden: {
-      width: "0rem",
+      width: '0rem'
     },
     visible: {
-      width: "2.5rem",
+      width: '2.5rem',
       transition: {
-        damping: 40,
-      },
-    },
+        damping: 40
+      }
+    }
   };
 
   return (

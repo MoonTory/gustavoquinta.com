@@ -1,5 +1,5 @@
-import React from "react";
-import { motion, useAnimation, AnimationDefinition } from "framer-motion";
+import React from 'react';
+import { motion, useAnimation, AnimationDefinition } from 'framer-motion';
 
 type Props = {
   delay?: number;
@@ -9,16 +9,16 @@ export const FloatingIcon: React.FC<Props> = ({ children, delay = 0 }) => {
   const duration = 3;
   const controls = useAnimation();
   const animation: AnimationDefinition = {
-    y: ["2px", "-1px", "2px"],
+    y: ['2px', '-1px', '2px'],
     transition: {
       repeat: Infinity,
       duration,
       times: [0, 0.5, 1],
-      ease: "easeInOut",
+      ease: 'easeInOut',
       delay: delay,
       damping: 500,
-      bounce: 20,
-    },
+      bounce: 20
+    }
   };
 
   const handleHoverStart = () => {
@@ -28,7 +28,7 @@ export const FloatingIcon: React.FC<Props> = ({ children, delay = 0 }) => {
   const handleHoverEnd = () => {
     controls.start({
       ...animation,
-      transition: { ...animation.transition, delay: 0 },
+      transition: { ...animation.transition, delay: 0 }
     } as any);
   };
 
@@ -43,9 +43,7 @@ export const FloatingIcon: React.FC<Props> = ({ children, delay = 0 }) => {
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
-      <div className="mr-4 transition-opacity hover:opacity-70 cursor-pointer">
-        {children}
-      </div>
+      <div className="mr-4 transition-opacity hover:opacity-70 cursor-pointer">{children}</div>
     </motion.div>
   );
 };

@@ -1,6 +1,6 @@
-"use client";
-import React from "react";
-import { reducer } from "./useTypewriter.reducer";
+'use client';
+import React from 'react';
+import { reducer } from './useTypewriter.reducer';
 
 export type TypewriterProps = {
   /** Callback Function that is triggered when loops are completed. available if loop is > `0` */
@@ -35,7 +35,7 @@ export type TypewriterHelper = {
 };
 
 export const useTypewriter = ({
-  words = ["Hello World!", "This is", "a simple Typewriter"],
+  words = ['Hello World!', 'This is', 'a simple Typewriter'],
   loop = 1,
   typeSpeed = 80,
   deleteSpeed = 50,
@@ -43,12 +43,12 @@ export const useTypewriter = ({
   onLoopDone,
   onType,
   onDelete,
-  onDelay,
+  onDelay
 }: TypewriterProps): [string, TypewriterHelper] => {
   const [{ speed, text, count }, dispatch] = React.useReducer(reducer, {
     speed: typeSpeed,
-    text: "",
-    count: 0,
+    text: '',
+    count: 0
   });
 
   const loops = React.useRef(0);
@@ -62,11 +62,11 @@ export const useTypewriter = ({
     const fullWord = words[index];
 
     if (!isDelete.current) {
-      dispatch({ type: "TYPE", payload: fullWord, speed: typeSpeed });
+      dispatch({ type: 'TYPE', payload: fullWord, speed: typeSpeed });
       isType.current = true;
 
       if (text === fullWord) {
-        dispatch({ type: "DELAY", payload: delaySpeed });
+        dispatch({ type: 'DELAY', payload: delaySpeed });
         isType.current = false;
         isDelay.current = true;
 
@@ -84,10 +84,10 @@ export const useTypewriter = ({
         }
       }
     } else {
-      dispatch({ type: "DELETE", payload: fullWord, speed: deleteSpeed });
-      if (text === "") {
+      dispatch({ type: 'DELETE', payload: fullWord, speed: deleteSpeed });
+      if (text === '') {
         isDelete.current = false;
-        dispatch({ type: "COUNT" });
+        dispatch({ type: 'COUNT' });
       }
     }
 
@@ -112,7 +112,7 @@ export const useTypewriter = ({
     text,
     onType,
     onDelete,
-    onDelay,
+    onDelay
   ]);
 
   React.useEffect(() => {
@@ -137,7 +137,7 @@ export const useTypewriter = ({
       isType: isType.current,
       isDelay: isDelay.current,
       isDelete: isDelete.current,
-      isDone: isDone.current,
-    },
+      isDone: isDone.current
+    }
   ];
 };

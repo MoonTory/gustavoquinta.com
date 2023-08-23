@@ -1,1 +1,1 @@
-export * from "./Starwheel";
+export * from './Starwheel';

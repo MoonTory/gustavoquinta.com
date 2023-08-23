@@ -1,7 +1,7 @@
-import { ReducerAction } from "~/types";
+import { ReducerAction } from '~/types';
 
 export enum ThemeActions {
-  TOGGLE = "TOGGLE",
+  TOGGLE = 'TOGGLE'
 }
 
 export type ThemeState = {
