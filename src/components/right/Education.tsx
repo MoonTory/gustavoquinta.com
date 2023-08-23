@@ -17,7 +17,7 @@ export default function Education({
 
   return (
     <section ref={ref} className="mb-16" id="education">
-      <h2 className="font-bold text-3xl mb-2">Education</h2>
+      <h2 className="font-bold text-3xl mb-2 text-brand z-80">~ Education</h2>
 
       <Card>
         <h3 className="font-bold text-2xl mb-6">Dope School University</h3>

@@ -36,7 +36,7 @@ export default function Projects({
 
   return (
     <section ref={ref} className="mb-16" id="projects">
-      <h2 className="font-bold text-3xl mb-2">Projects</h2>
+      <h2 className="font-bold text-3xl mb-2 text-brand z-10">~ Projects</h2>
 
       <Card>
         <div className="flex items-center justify-between mb-6">

@@ -19,7 +19,7 @@ export default function Misc({
 
   return (
     <section ref={ref} id="misc">
-      <h2 className="font-bold text-3xl mb-2">Misc</h2>
+      <h2 className="font-bold text-3xl mb-2 text-brand">~ Misc</h2>
 
       <Contact />
       <Tech />

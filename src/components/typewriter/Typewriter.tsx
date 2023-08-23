@@ -1,5 +1,6 @@
 import React from 'react';
-import { Cursor } from './cursor';
+import { colors } from '~/utils';
+import { Cursor } from './Cursor';
 import { useTypewriter } from './useTypewriter.effect';
 
 type Props = {
@@ -7,10 +8,15 @@ type Props = {
   cursorColor?: string;
 };
 
-export const Typewriter: React.FC<Props> = ({ words, cursorColor = '#1a1625' }) => {
+export const Typewriter: React.FC<Props> = ({
+  words,
+  cursorColor = colors.brand as string
+}) => {
   const [text] = useTypewriter({
     words,
-    loop: 0
+    loop: 0,
+    deleteSpeed: 25,
+    delaySpeed: 5000
   });
 
   return (

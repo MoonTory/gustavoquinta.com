@@ -17,7 +17,7 @@ export default function Work({
 
   return (
     <section ref={ref} className="mb-16" id="work">
-      <h2 className="font-bold text-3xl mb-2">Work</h2>
+      <h2 className="font-bold text-3xl mb-2 text-brand z-10">~ Work</h2>
 
       <Card>
         {/* TITLE */}

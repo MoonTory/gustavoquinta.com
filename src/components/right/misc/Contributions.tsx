@@ -17,7 +17,7 @@ export default function Contributions() {
         </a>
       </p>
       <div className="flex justify-center">
-        <GitHubCalendar username="MoonTory" />
+        <GitHubCalendar username="MoonTory" colorScheme="light" />
       </div>
     </Card>
   );

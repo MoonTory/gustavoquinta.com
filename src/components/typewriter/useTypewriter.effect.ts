@@ -14,7 +14,7 @@ export type TypewriterProps = {
   /** Array of strings holding the words */
   words: string[];
   /** Control how many times to run. `0 | false` to run infinitely */
-  loop?: number | boolean;
+  loop?: number;
   /** Character typing speed in Milliseconds */
   typeSpeed?: number;
   /** Character deleting speed in Milliseconds */

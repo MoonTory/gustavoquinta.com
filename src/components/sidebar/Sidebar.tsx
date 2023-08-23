@@ -15,7 +15,7 @@ export const SideLink: React.FC<{
       transition: {
         type: 'spring',
         stiffness: 150,
-        duration: 0.25
+        duration: 1
       }
     },
     idle: {

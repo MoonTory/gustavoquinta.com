@@ -3,10 +3,7 @@ import { motion } from 'framer-motion';
 import { FloatingIcon } from '~/components/FloatingIcon';
 
 export const Navbar = () => {
-  const navigate =
-    (url: string, blank: boolean = true) =>
-    () =>
-      blank ? window.open(url, '_blank') : window.open(url);
+  const navigate = (url: string) => () => window.open(url, '_blank');
 
   return (
     <motion.nav
@@ -46,12 +43,13 @@ export const Navbar = () => {
         </FloatingIcon>
 
         <FloatingIcon delay={1.89}>
-          <img
-            alt="google-svg"
-            onClick={navigate('mailto:gustavoqnt40@gmail.com', false)}
-            src="/google.svg"
-            className="transition-opacity hover:opacity-70 cursor-pointer"
-          />
+          <a href="mailto:gustavoqnt40@gmail.com">
+            <img
+              alt="google-svg"
+              src="/google.svg"
+              className="transition-opacity hover:opacity-70 cursor-pointer"
+            />
+          </a>
         </FloatingIcon>
       </div>
     </motion.nav>

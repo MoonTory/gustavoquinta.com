@@ -1,3 +1,3 @@
 export * from './navbar';
 export * from './starwheel';
-export * from './typewriter/cursor';
+export * from './typewriter';

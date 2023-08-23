@@ -37,12 +37,7 @@ export const FloatingIcon: React.FC<Props> = ({ children, delay = 0 }) => {
   }, []);
 
   return (
-    <motion.div
-      // initial={{ y: "0px" }}
-      animate={controls}
-      onHoverStart={handleHoverStart}
-      onHoverEnd={handleHoverEnd}
-    >
+    <motion.div animate={controls} onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
       <div className="mr-4 transition-opacity hover:opacity-70 cursor-pointer">{children}</div>
     </motion.div>
   );
