@@ -1,0 +1,43 @@
+.starwheel-filter {
+  // filter: brightness(0) saturate(100%) invert(60%) sepia(17%) saturate(2277%)
+  //   hue-rotate(210deg) brightness(97%) contrast(101%);
+  // filter: brightness(0) saturate(100%) invert(26%) sepia(8%) saturate(777%)
+  //   hue-rotate(217deg) brightness(94%) contrast(93%);
+  filter: brightness(0) saturate(100%) invert(29%) sepia(16%) saturate(734%)
+    hue-rotate(176deg) brightness(102%) contrast(90%);
+}
+
+.starwheel {
+  // width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  svg {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    left: 50%;
+    // bottom: -50%;
+    // size: 400vw;
+    width: 700vw;
+    height: 700vh; // Added this to control the height of the SVG, making it larger
+    margin-left: -350vw;
+    animation-name: starwheel;
+    animation-duration: 1000s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media prefers-reduced-motion {
+      animation-name: none;
+    }
+  }
+}
+
+@keyframes starwheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}

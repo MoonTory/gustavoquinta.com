@@ -1,4 +1,3 @@
-export { Header } from './header'
-export { SEO } from './SEO'
-export { Footer } from './Footer'
-export { Jumbotron } from './jumbotron'
+export * from "./navbar";
+export * from "./starwheel";
+export * from "./typewriter/cursor";
