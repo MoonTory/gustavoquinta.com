@@ -9,7 +9,7 @@ export const FloatingIcon: React.FC<Props> = ({ children, delay = 0 }) => {
   const duration = 3;
   const controls = useAnimation();
   const animation: AnimationDefinition = {
-    y: ['2px', '-1px', '2px'],
+    y: ['2px', '-3px', '2px'],
     transition: {
       repeat: Infinity,
       duration,

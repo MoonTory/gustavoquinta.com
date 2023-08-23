@@ -15,8 +15,8 @@ export const Typewriter: React.FC<Props> = ({
   const [text] = useTypewriter({
     words,
     loop: 0,
-    deleteSpeed: 25,
-    delaySpeed: 5000
+    // deleteSpeed: 25,
+    delaySpeed: 7500
   });
 
   return (

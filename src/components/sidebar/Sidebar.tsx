@@ -88,7 +88,7 @@ export const Sidebar: React.FC<{ section: string }> = ({ section }) => {
       animate="visible"
       initial="hidden"
       variants={animations}
-      className="bg-dusty text-white shadow-xl min-h-screen overflow-hidden w-10 fixed top-[56px] left-0 z-10"
+      className="bg-dusty text-white shadow-xl min-h-screen overflow-hidden w-10 fixed top-[80px] left-0 z-10"
     >
       <nav>
         {links.map((link, idx) => (
