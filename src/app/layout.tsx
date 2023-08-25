@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeContext.Consumer>
           {({ dark }) => (
             <html lang="en" className={`${dark ? 'dark ' : ''} ${recursive.className}`}>
-              <body className="transition-colors duration-1000 bg-light-100 dark:bg-mixed-100 scroll-smooth text-black dark:text-white min-h-screen">
+              <body className="transition-all duration-[1200ms] bg-light-100 dark:bg-mixed-100 scroll-smooth text-black dark:text-white min-h-screen">
                 {children}
               </body>
             </html>
