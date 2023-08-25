@@ -51,7 +51,7 @@ type Props = {
 
 export const Work: React.FC<Props> = ({ setSection }) => {
   const [ref, inView] = useInView({
-    threshold: 0.5
+    threshold: 0.3
   });
 
   useEffect(() => {

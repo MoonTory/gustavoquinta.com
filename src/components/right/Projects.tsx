@@ -62,7 +62,7 @@ export const Projects: React.FC<{
   setSection: (...args: any[]) => void;
 }> = ({ setSection }) => {
   const [ref, inView] = useInView({
-    threshold: 0.5
+    threshold: 0.3
   });
 
   useEffect(() => {

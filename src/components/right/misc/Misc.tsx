@@ -6,7 +6,7 @@ import Tech from './Tech';
 
 export default function Misc({ setSection }: { setSection: (...args: any[]) => void }) {
   const [ref, inView] = useInView({
-    threshold: 0.5
+    threshold: 0.3
   });
 
   React.useEffect(() => {

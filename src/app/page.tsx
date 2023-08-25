@@ -23,8 +23,8 @@ export default function Home() {
       <Progressbar />
       <Sidebar section={section} />
 
-      <main id="homescreen" className="flex-1 sm:ml-5 md:ml-10 mt-[64px]">
-        <div className="h-screen p-6 gap-6 lg:gap-16 lg:p-16 grid grid-cols-1 lg:grid-cols-2">
+      <main id="homescreen" className="flex-1 sm:pl-5 md:pl-10 pt-[64px]">
+        <div className="h-screen p-6 gap-6 lg:gap-16 lg:p-16 grid grid-cols-1 lg:grid-cols-2 overflow-y">
           <Left />
           <Right setSection={setSection} />
         </div>
