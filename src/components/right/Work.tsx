@@ -27,13 +27,14 @@ export const WorkCard: React.FC<{ work: WorkExperience }> = ({ work }) => {
 
       <p className="font-light mb-4 text-black/80 dark:text-white/80">{work.location}</p>
 
-      {
-        work.content.map((content, idx, arr) => (
-          <p className={`font-light leading-7 ${idx !== arr.length - 1 ? 'mb-4' : ''}`}>
-            {content}
-          </p>
-        )) as any
-      }
+      {work.content.map((content, idx, arr) => (
+        <p
+          key={idx}
+          className={`font-light leading-7 ${idx !== arr.length - 1 ? 'mb-4' : ''}`}
+        >
+          {content}
+        </p>
+      ))}
     </Card>
   );
 };

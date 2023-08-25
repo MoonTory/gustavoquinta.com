@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Josefin_Sans } from 'next/font/google';
 import { Typewriter } from '~/components/typewriter';
 
@@ -45,7 +44,7 @@ export function Hero() {
       </div>
       <hr className="mb-2" />
       <p className="font-light leading-7">
-        For countless moons, I've deciphered{' '}
+        For countless moons, I&apos;ve deciphered{' '}
         <span className="text-brand font-bold">
           <Typewriter words={words1} />
         </span>{' '}

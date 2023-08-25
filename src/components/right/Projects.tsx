@@ -44,8 +44,12 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       </div>
 
       {
-        project.content.map((content) => {
-          return <p className={`font-light leading-7 mb-6`}>{content}</p>;
+        project.content.map((content, idx) => {
+          return (
+            <p key={idx} className={`font-light leading-7 mb-6`}>
+              {content}
+            </p>
+          );
         }) as any
       }
 
@@ -69,8 +73,8 @@ export const Projects: React.FC<{
     <section ref={ref} className="mb-16" id="projects">
       <h2 className="font-bold text-3xl mb-2 text-brand z-10">~ Projects</h2>
 
-      {projects.map((project) => (
-        <ProjectCard project={project} />
+      {projects.map((project, idx) => (
+        <ProjectCard key={idx} project={project} />
       ))}
     </section>
   );
