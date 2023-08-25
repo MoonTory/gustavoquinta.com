@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { AnimationDefinition } from 'framer-motion';
 import { AnimatedImage } from '~/components/AnimatedImage';

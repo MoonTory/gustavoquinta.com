@@ -1,3 +1,4 @@
+'use client';
 import React, { useContext } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';

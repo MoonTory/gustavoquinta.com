@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Card from '~/components/Card';
 import { projects } from '~/constants';
@@ -62,7 +62,7 @@ export const Projects: React.FC<{
   setSection: (...args: any[]) => void;
 }> = ({ setSection }) => {
   const [ref, inView] = useInView({
-    threshold: 0.3
+    threshold: [0.1, 0.5, 1]
   });
 
   useEffect(() => {

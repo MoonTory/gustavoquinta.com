@@ -1,23 +1,17 @@
 import React from 'react';
-import { AppActions } from './types';
-import { initialState, themeReducer } from './app.reducer';
 
 interface Context {
   section: string;
-  setSection: (section: string) => void;
+  setSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const AppContext = React.createContext({} as Context);
 
 export const AppProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [state, dispatch] = React.useReducer(themeReducer, initialState);
-
-  const setSection = (section: string) => {
-    return dispatch({ type: AppActions.SET_SECTION, payload: section });
-  };
+  const [section, setSection] = React.useState('work');
 
   return (
-    <AppContext.Provider value={{ section: state.section, setSection }}>
+    <AppContext.Provider value={{ section: section, setSection }}>
       {children}
     </AppContext.Provider>
   );

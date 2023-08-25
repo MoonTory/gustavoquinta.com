@@ -1,5 +1,8 @@
+'use client';
 import React from 'react';
 import { motion, Variants, useAnimation } from 'framer-motion';
+import { useIsMobile } from '~/utils';
+import { AppContext } from '~/context';
 
 export const SideLink: React.FC<{
   text: string;
@@ -73,7 +76,9 @@ export const SideLink: React.FC<{
   );
 };
 
-export const Sidebar: React.FC<{ section: string }> = ({ section }) => {
+export const Sidebar: React.FC<{}> = () => {
+  const { isMobile } = useIsMobile();
+  const { section } = React.useContext(AppContext);
   const links = ['work', 'projects', 'education', 'misc'];
 
   const animations: Variants = {
@@ -88,12 +93,14 @@ export const Sidebar: React.FC<{ section: string }> = ({ section }) => {
     }
   };
 
-  return (
+  return isMobile ? (
+    <></>
+  ) : (
     <motion.aside
       animate="visible"
       initial="hidden"
       variants={animations}
-      className="transition-all duration-1000 hidden md:flex justify-between bg-light-300 dark:bg-mixed-100 text-white shadow-xl min-h-screen overflow-hidden w-12 fixed top-[80px] left-0 z-10"
+      className="transition-all duration-1000 flex justify-between bg-light-300 dark:bg-mixed-100 text-white shadow-xl min-h-screen overflow-hidden w-12 fixed top-[80px] left-0 z-10"
     >
       <div>
         {links.map((link, idx) => (

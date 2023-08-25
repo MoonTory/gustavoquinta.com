@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { FaGoogle, FaGithubAlt, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
