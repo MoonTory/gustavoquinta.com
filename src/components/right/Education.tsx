@@ -37,7 +37,7 @@ export const EducationCard: React.FC<{ education: Education }> = ({ education })
 };
 
 type Props = {
-  setSection: Dispatch<SetStateAction<string>>;
+  setSection: (...args: any[]) => void;
 };
 
 export const Education: React.FC<Props> = ({ setSection }) => {

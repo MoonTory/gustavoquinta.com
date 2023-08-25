@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, Variants, useAnimation } from 'framer-motion';
+import { AppContext } from '~/context';
 
 export const SideLink: React.FC<{
   text: string;
@@ -73,7 +74,8 @@ export const SideLink: React.FC<{
   );
 };
 
-export const Sidebar: React.FC<{ section: string }> = ({ section }) => {
+export const Sidebar: React.FC<{}> = () => {
+  const { section } = React.useContext(AppContext);
   const links = ['work', 'projects', 'education', 'misc'];
 
   const animations: Variants = {

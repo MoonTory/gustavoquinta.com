@@ -55,7 +55,7 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 };
 
 export const Projects: React.FC<{
-  setSection: Dispatch<SetStateAction<string>>;
+  setSection: (...args: any[]) => void;
 }> = ({ setSection }) => {
   const [ref, inView] = useInView({
     threshold: 0.5

@@ -1,6 +1,7 @@
 export * from './effects';
 export * from './left';
 export * from './navbar';
+export * from './progress-bar';
 export * from './right';
 export * from './sidebar';
 export * from './starwheel';

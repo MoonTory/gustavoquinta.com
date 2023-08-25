@@ -39,7 +39,7 @@ export const WorkCard: React.FC<{ work: WorkExperience }> = ({ work }) => {
 };
 
 type Props = {
-  setSection: Dispatch<SetStateAction<string>>;
+  setSection: (...args: any[]) => void;
 };
 
 export const Work: React.FC<Props> = ({ setSection }) => {
