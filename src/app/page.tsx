@@ -1,10 +1,11 @@
 'use client';
 import Head from 'next/head';
-
+import React from 'react';
 import { Left, Right, Navbar, Sidebar, Progressbar } from '~/components';
 import { Clouds, Stars, CelestialBody, Waves } from '~/components/effects';
 
 export default function Home() {
+  const [section, setSection] = React.useState('work');
   return (
     <div>
       <Head>
@@ -20,12 +21,12 @@ export default function Home() {
 
       <Navbar />
       <Progressbar />
-      <Sidebar />
+      <Sidebar section={section} />
 
       <main id="homescreen" className="flex-1 sm:ml-5 md:ml-10 mt-[64px]">
         <div className="h-screen p-6 gap-6 lg:gap-16 lg:p-16 grid grid-cols-1 lg:grid-cols-2">
           <Left />
-          <Right />
+          <Right setSection={setSection} />
         </div>
       </main>
     </div>

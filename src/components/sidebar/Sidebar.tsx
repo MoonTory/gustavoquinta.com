@@ -74,8 +74,8 @@ export const SideLink: React.FC<{
   );
 };
 
-export const Sidebar: React.FC<{}> = () => {
-  const { section } = React.useContext(AppContext);
+export const Sidebar: React.FC<{ section: string }> = ({ section }) => {
+  // const { section } = React.useContext(AppContext);
   const links = ['work', 'projects', 'education', 'misc'];
 
   const animations: Variants = {
