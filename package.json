@@ -10,6 +10,7 @@
     "prettier:fix": "npx prettier src/**/*.{ts,tsx} --write"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.40.1",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
