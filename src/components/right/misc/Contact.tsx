@@ -7,8 +7,8 @@ export default function Contact() {
       <p className="font-light leading-7 mb-6">
         If you&apos;d like to connect or discuss potential collaborations, please feel free to
         reach out, either on LinkedIn or through email (I&apos;m not much of a twitter guy).
-        Give me a shout here:
       </p>
+      <p className="font-light leading-7 mb-6">Give me a shout here:</p>
       <p className="font-light leading-7">
         Email:{' '}
         <a
