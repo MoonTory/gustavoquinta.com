@@ -19,7 +19,7 @@ export const WorkCard: React.FC<{ work: WorkExperience }> = ({ work }) => {
     <Card>
       <h3 className="font-bold text-2xl">{work.position}</h3>
 
-      <p className="font-light text-black/80 dark:text-white/80">
+      <p className="transition-colors duration-1000 font-light text-black/80 dark:text-white/80">
         <a
           target="_blank"
           rel="noreferrer"
@@ -31,7 +31,9 @@ export const WorkCard: React.FC<{ work: WorkExperience }> = ({ work }) => {
         • {work.type} • {work.startDate} - {work.endDate}
       </p>
 
-      <p className="font-light mb-4 text-black/80 dark:text-white/80">{work.location}</p>
+      <p className=" transition-colors duration-1000 font-light mb-4 text-black/80 dark:text-white/80">
+        {work.location}
+      </p>
 
       {work.content.map((content, idx, arr) => (
         <p

@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Card from '~/components/Card';
 import { projects } from '~/constants';
 
 export const Tag: React.FC<{ text: string }> = ({ text = 'Tag' }) => {
-  return <span className="px-2 text-sm mr-2 mb-2 py-1 rounded-full bg-brand">{text}</span>;
+  return (
+    <motion.span
+      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.1 }}
+      className="px-2 text-md mr-4 mb-2 py-2 rounded-full bg-brand cursor-pointer"
+    >
+      {text}
+    </motion.span>
+  );
 };
 
 export const TechSection: React.FC<{ tech: string[] }> = ({ tech }) => {
@@ -65,7 +74,7 @@ export const Projects: React.FC<{
     threshold: [0.1, 0.5, 1]
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     inView && setSection('projects');
   }, [inView, setSection]);
 

@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      <Clouds />
-      <Stars />
+      {/* <Clouds />
+      <Stars /> */}
       <CelestialBody />
-      <Waves />
+      {/* <Waves /> */}
 
       <Navbar />
       <Progressbar />
