@@ -11,6 +11,7 @@ export interface WorkExperience {
   content: string[];
   startDate: string;
   endDate: string;
+  url?: string;
 }
 
 export const WorkCard: React.FC<{ work: WorkExperience }> = ({ work }) => {
@@ -19,7 +20,12 @@ export const WorkCard: React.FC<{ work: WorkExperience }> = ({ work }) => {
       <h3 className="font-bold text-2xl">{work.position}</h3>
 
       <p className="font-light text-black/80 dark:text-white/80">
-        <a href="#" rel="noreferrer" className="font-bold text-brand hover:underline">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={work.url ? work.url : '#'}
+          className="font-bold text-brand hover:underline"
+        >
           {work.company}
         </a>{' '}
         • {work.type} • {work.startDate} - {work.endDate}
