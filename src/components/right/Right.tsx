@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import Education from './Education';
-import Projects from './Projects';
+import { Education } from './Education';
+import { Projects } from './Projects';
 import Misc from './misc/Misc';
-import Work from './Work';
+import { Work } from './Work';
 
 export function Right({ setSection }: { setSection: Dispatch<SetStateAction<string>> }) {
   return (

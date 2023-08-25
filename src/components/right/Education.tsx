@@ -1,12 +1,46 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import Card from '../Card';
+import Card from '~/components/Card';
+import { education } from '~/constants';
 
-export default function Education({
-  setSection
-}: {
+export interface Education {
+  school: string;
+  url?: string;
+  content: string[];
+}
+
+export const EducationCard: React.FC<{ education: Education }> = ({ education }) => {
+  return (
+    <Card>
+      <h3 className="font-bold text-2xl mb-6">{education.school}</h3>
+
+      {
+        education.content.map((content, idx) => (
+          <p key={idx} className="font-light leading-7 mb-6">
+            {content}
+          </p>
+        )) as any
+      }
+
+      <div className="mt-6">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={education.url ? education.url : '#'}
+          className="text-brand text-sm underline"
+        >
+          Website
+        </a>
+      </div>
+    </Card>
+  );
+};
+
+type Props = {
   setSection: Dispatch<SetStateAction<string>>;
-}) {
+};
+
+export const Education: React.FC<Props> = ({ setSection }) => {
   const [ref, inView] = useInView({
     threshold: 0.5
   });
@@ -19,46 +53,9 @@ export default function Education({
     <section ref={ref} className="mb-16" id="education">
       <h2 className="font-bold text-3xl mb-2 text-brand z-80">~ Education</h2>
 
-      <Card>
-        <h3 className="font-bold text-2xl mb-6">Dope School University</h3>
-        <p className="font-light leading-7 mb-6">
-          You can keep this relatively short. Talk a bit about your major, when you graduated
-          (or when you WILL graduate), and any accomplishments you made while you were there.
-          Deans list, sports teams, clubs, whatever shows you&apos;ve put in some effort!
-        </p>
-
-        <div className="mt-6">
-          <a
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-            className="text-brand text-sm underline"
-          >
-            Website
-          </a>
-        </div>
-      </Card>
-
-      <Card>
-        <h3 className="font-bold text-2xl mb-6">Another School</h3>
-        <p className="font-light leading-7 mb-6">
-          If you&apos;ve got more than one education to list, dope! Add it. Don&apos;t feel
-          like you have to add your high school if you don&apos;t feel it&apos;s relevant, but
-          it doesn&apos;t hurt if you&apos;ve got some other cool stuff (captain of a team etc)
-          to show off.
-        </p>
-
-        <div className="mt-6">
-          <a
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-            className="text-brand text-sm underline"
-          >
-            Website
-          </a>
-        </div>
-      </Card>
+      {education.map((education, idx) => (
+        <EducationCard key={idx} education={education} />
+      ))}
     </section>
   );
-}
+};

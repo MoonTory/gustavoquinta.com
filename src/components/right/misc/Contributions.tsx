@@ -1,7 +1,11 @@
-import Card from '../../Card';
+import { useContext } from 'react';
 import GitHubCalendar from 'react-github-calendar';
 
+import Card from '~/components/Card';
+import { ThemeContext } from '~/context';
+
 export default function Contributions() {
+  const { dark } = useContext(ThemeContext);
   return (
     <Card>
       <h3 className="font-bold text-2xl mb-6">Contributions</h3>
@@ -17,7 +21,7 @@ export default function Contributions() {
         </a>
       </p>
       <div className="flex justify-center">
-        <GitHubCalendar username="MoonTory" colorScheme="light" />
+        <GitHubCalendar username="MoonTory" colorScheme={dark ? 'light' : 'dark'} />
       </div>
     </Card>
   );

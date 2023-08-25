@@ -5,6 +5,7 @@ import { AnimatedImage } from '~/components/AnimatedImage';
 const AnimatedWave: React.FC<React.ImgHTMLAttributes<{}> & { delay?: number }> = ({
   src,
   alt,
+  style,
   delay = 0,
   className
 }) => {
@@ -14,7 +15,7 @@ const AnimatedWave: React.FC<React.ImgHTMLAttributes<{}> & { delay?: number }> =
     transition: {
       delay,
       bounce: 20,
-      duration: 6,
+      duration: 4,
       damping: 500,
       repeat: Infinity,
       ease: 'easeInOut',
@@ -22,10 +23,20 @@ const AnimatedWave: React.FC<React.ImgHTMLAttributes<{}> & { delay?: number }> =
     }
   };
 
-  return <AnimatedImage src={src} alt={alt} animation={animation} className={className} />;
+  return (
+    <AnimatedImage
+      src={src}
+      alt={alt}
+      style={style}
+      animation={animation}
+      className={className}
+    />
+  );
 };
 
-export const AnimatedWaves: React.FC<{} & React.PropsWithChildren> = () => {
+const MemoizedAnimatedWave = React.memo(AnimatedWave, () => true);
+
+const AnimatedWavesMemo: React.FC<{} & React.PropsWithChildren> = () => {
   const waveSources = [
     '/svg/waves_blue_1.svg',
     '/svg/waves_blue_2.svg',
@@ -36,13 +47,16 @@ export const AnimatedWaves: React.FC<{} & React.PropsWithChildren> = () => {
   return (
     <React.Fragment>
       {waveSources.map((src, idx) => (
-        <AnimatedWave
+        <MemoizedAnimatedWave
+          key={idx}
           src={src}
-          delay={idx * 1}
-          className="fixed bottom-0 w-[110%] scale-100"
+          delay={idx * 1.33}
+          className="fixed bottom-0 w-[100%] scaleup-200 sm:scaleup-115"
           alt="A flat image of waves in the horizon"
         />
       ))}
     </React.Fragment>
   );
 };
+
+export const Waves = React.memo(AnimatedWavesMemo, () => true);

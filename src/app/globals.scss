@@ -1,0 +1,41 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+  .animation-delay {
+    animation-delay: 2s;
+  }
+  .scaleup-50 {
+    scale: 0.5;
+  }
+  .scaleup-100 {
+    scale: 1;
+  }
+  .scaleup-115 {
+    scale: 1.15;
+  }
+  .scaleup-125 {
+    scale: 1.25;
+  }
+  .scaleup-150 {
+    scale: 1.5;
+  }
+  .scaleup-200 {
+    scale: 2;
+  }
+}
+
+.progress-bar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #52b2cf;
+  transform-origin: 0%;
+  z-index: 99999999999999;
+}

@@ -1,4 +1,4 @@
-export * from './Clouds';
-export * from './Moon';
+export * from './Waves';
 export * from './Stars';
-export * from './waves';
+export * from './Clouds';
+export * from './CelestialBody';

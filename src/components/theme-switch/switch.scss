@@ -1,0 +1,21 @@
+.handle {
+  height: 30px;
+
+  width: 30px;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  align-items: center;
+
+  justify-items: center;
+
+  background-color: #fff;
+
+  overflow: hidden;
+
+  :hover {
+    background-color: #52b2cf;
+  }
+}

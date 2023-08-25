@@ -9,6 +9,7 @@ type Props = {
 export const AnimatedImage: React.FC<React.ImgHTMLAttributes<{}> & Props> = ({
   src,
   alt,
+  style,
   className,
   animation
 }) => {
@@ -18,5 +19,7 @@ export const AnimatedImage: React.FC<React.ImgHTMLAttributes<{}> & Props> = ({
     controls.start(animation);
   }, []);
 
-  return <motion.img src={src} alt={alt} animate={controls} className={className} />;
+  return (
+    <motion.img src={src} alt={alt} animate={controls} style={style} className={className} />
+  );
 };

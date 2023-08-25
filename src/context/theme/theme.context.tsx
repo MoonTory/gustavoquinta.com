@@ -1,9 +1,9 @@
 import React from 'react';
-import { ThemeActions, ThemeState } from './types';
+import { ThemeActions } from './types';
 import { initialState, themeReducer } from './theme.reducer';
 
 interface Context {
-  state: ThemeState;
+  dark: boolean;
   toggle: () => void;
 }
 
@@ -16,5 +16,9 @@ export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) =
     return dispatch({ type: ThemeActions.TOGGLE });
   };
 
-  return <ThemeContext.Provider value={{ state, toggle }}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={{ dark: state.dark, toggle }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };

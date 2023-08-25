@@ -28,19 +28,11 @@ export function Hero() {
   return (
     <div className="mb-6 sticky top-[7rem] mt-12 lg:mt-0">
       <div className="flex items-center space-x-6 py-6">
-        {/* <img
-          src="/profile-pic.jpeg"
-          width="256"
-          height="256"
-          className="flex-none rounded-full object-cover border-white border-2"
-        /> */}
-        <div className="flex-auto">
+        <div className="flex-auto text-center sm:text-left">
           <h1
             style={josefin.style}
             className="uppercase tracking-widest text-5xl lg:text-6xl leading-tight lg:leading-tight font-thin"
           >
-            {/* Hey, I&apos;m
-            <br /> */}
             Gustavo Quinta<span className="text-brand">.</span>
           </h1>
           <h2
@@ -54,13 +46,13 @@ export function Hero() {
       <hr className="mb-2" />
       <p className="font-light leading-7">
         For countless moons, I've deciphered{' '}
-        <Link href="#" className="text-brand font-bold hover:underline">
+        <span className="text-brand font-bold">
           <Typewriter words={words1} />
-        </Link>{' '}
+        </span>{' '}
         and engaged in the{' '}
-        <Link href="#" className="text-brand font-bold hover:underline">
+        <span className="text-brand font-bold">
           <Typewriter words={words2} />
-        </Link>{' '}
+        </span>{' '}
         that energize the universe of the internet. While the web often mirrors sorcery, my
         expertise and perseverance equip me to craft almost anything
       </p>

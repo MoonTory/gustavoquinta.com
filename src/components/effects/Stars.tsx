@@ -45,7 +45,7 @@ function StarsMemo() {
   }, []);
 
   return (
-    <div className="w-full h-[100vh] fixed top-0 left-0 right-0  z-0">
+    <div className="opacity-0 dark:opacity-100 w-full h-[100vh] fixed top-0 left-0 right-0  z-0">
       {stars.map(({ key, scrollPos, scrollParams, horizontalPos, bottomInitial }) => (
         <Star
           key={key}

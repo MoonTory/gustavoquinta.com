@@ -35,15 +35,15 @@ export type TypewriterHelper = {
 };
 
 export const useTypewriter = ({
-  words = ['Hello World!', 'This is', 'a simple Typewriter'],
+  onType,
+  onDelay,
+  onDelete,
+  onLoopDone,
   loop = 1,
   typeSpeed = 80,
   deleteSpeed = 50,
   delaySpeed = 1500,
-  onLoopDone,
-  onType,
-  onDelete,
-  onDelay
+  words = ['Hello World!', 'This is', 'a simple Typewriter']
 }: TypewriterProps): [string, TypewriterHelper] => {
   const [{ speed, text, count }, dispatch] = React.useReducer(reducer, {
     speed: typeSpeed,
@@ -103,16 +103,16 @@ export const useTypewriter = ({
       if (onDelay) onDelay();
     }
   }, [
-    count,
-    delaySpeed,
-    deleteSpeed,
-    loop,
-    typeSpeed,
     words,
     text,
+    loop,
+    count,
     onType,
+    onDelay,
     onDelete,
-    onDelay
+    typeSpeed,
+    delaySpeed,
+    deleteSpeed
   ]);
 
   React.useEffect(() => {
@@ -134,10 +134,10 @@ export const useTypewriter = ({
   return [
     text,
     {
+      isDone: isDone.current,
       isType: isType.current,
       isDelay: isDelay.current,
-      isDelete: isDelete.current,
-      isDone: isDone.current
+      isDelete: isDelete.current
     }
   ];
 };

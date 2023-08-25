@@ -16,18 +16,18 @@ export default function Contact() {
           rel="noreferrer"
           className="text-brand font-bold hover:underline"
         >
-          youremail@gmail.com
+          gustavoqnt40@gmail.com
         </a>
       </p>
       <p className="font-light leading-7">
         LinkedIn:{' '}
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/gustavo-quinta"
           target="_blank"
           rel="noreferrer"
           className="text-brand font-bold hover:underline"
         >
-          @your-linkedin
+          @gustavo-quinta
         </a>
       </p>
     </Card>
