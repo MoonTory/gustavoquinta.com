@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { FaGoogle, FaGithubAlt, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaGoogle, FaGithubAlt, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { RESUME_FILENAME } from '~/constants';
 
@@ -45,7 +45,11 @@ export const Navbar = () => {
             </div>
 
             <div className="handle text-black animate-floating cursor-pointer hover:pause hover:bg-brand mr-4 ">
-              <FaTwitter onClick={navigate('https://twitter.com/TheMoonTory')} />
+              <img
+                alt="x-twitter logo"
+                src="/svg/x-twitter.svg"
+                onClick={navigate('https://twitter.com/TheMoonTory')}
+              />
             </div>
 
             <div className="handle text-black animate-floating cursor-pointer hover:pause hover:bg-brand mr-4 ">
