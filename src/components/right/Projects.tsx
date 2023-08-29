@@ -9,7 +9,7 @@ export const Tag: React.FC<{ text: string }> = ({ text = 'Tag' }) => {
     <motion.span
       whileTap={{ scale: 0.9 }}
       whileHover={{ scale: 1.1 }}
-      className="select-none px-2 text-md mr-4 mb-2 py-2 rounded-full bg-brand cursor-pointer"
+      className="select-none px-1 text-sm mr-2 mb-2 py-2 rounded-full bg-brand cursor-pointer"
     >
       {text}
     </motion.span>
