@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Left, Right, Navbar, Sidebar, Progressbar } from '~/components';
-import { Clouds, Stars, CelestialBody, Waves } from '~/components/effects';
+import { Left, Right, Navbar, Sidebar, Progressbar, Starwheel } from '~/components';
+import { Clouds, Stars, CelestialBody } from '~/components/effects';
 
 export const metadata: Metadata = {
   title: 'Gustavo Quinta | MoonTory',
@@ -15,7 +15,7 @@ export default function Home() {
       <Clouds />
       <Stars />
       <CelestialBody />
-      <Waves />
+      <Starwheel />
 
       <Navbar />
       <Progressbar />

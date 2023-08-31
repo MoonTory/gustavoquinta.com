@@ -1,19 +1,44 @@
+'use client';
 import * as React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import './styles.scss';
 
 export const Starwheel: React.FC = () => {
+  return <MemoizedStarwheel />;
+};
+
+export const AnimatedStarwheel = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 12000], [0, -650]);
+
   return (
-    <div className="starwheel">
-      <StarwheelSVG />
-    </div>
+    <motion.div
+      style={{ y }}
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        opacity: {
+          duration: 2,
+          ease: 'easeInOut'
+        }
+      }}
+      className="starwheel-container"
+    >
+      <div className="starwheel">
+        <StarwheelSVG />
+      </div>
+    </motion.div>
   );
 };
+
+const MemoizedStarwheel = React.memo(AnimatedStarwheel, () => true);
 
 const StarwheelSVG = () => (
   <svg
     id="starwheel"
-    className="starwheel-filter -top-1/2 sm:top-[0%] sm:-bottom-1/2"
+    className="starwheel-filter "
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="http://www.w3.org/1999/xlink"
@@ -23,6 +48,7 @@ const StarwheelSVG = () => (
     height="1200px"
     viewBox="0 0 1200 1200"
     enableBackground="new 0 0 1200 1200"
+    preserveAspectRatio="xMidYMid"
   >
     <style>
       {`

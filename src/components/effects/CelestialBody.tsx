@@ -5,10 +5,12 @@ import { ThemeContext } from '~/context';
 
 function CelestialImage({ dark, delay = 0 }: { dark: boolean; delay: number }) {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 12000], [0, -750]);
+  const y = useTransform(scrollY, [0, 12000], [0, -950]);
 
   const key = dark ? 'moon' : 'sun';
   const src = dark ? '/images/moon.png' : '/images/sun.png';
+
+  if (!dark) return null;
 
   return (
     <motion.img
@@ -38,7 +40,7 @@ export const CelestialBody = () => {
   const { dark } = useContext(ThemeContext);
 
   return (
-    <div className="w-[350px] h-[350px] rounded-full fixed top-[75vh] right-[calc(50%_-_25px)] z-0">
+    <div className="w-[350px] h-[350px] rounded-full fixed top-[95vh] right-[calc(50%_-_25px)] z-0">
       <AnimatePresence mode="wait">
         <MemoizedCelestialImage dark={dark} delay={0.1} />
       </AnimatePresence>

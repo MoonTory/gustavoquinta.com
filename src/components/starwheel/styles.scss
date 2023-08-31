@@ -1,26 +1,33 @@
 .starwheel-filter {
-  // filter: brightness(0) saturate(100%) invert(60%) sepia(17%) saturate(2277%)
-  //   hue-rotate(210deg) brightness(97%) contrast(101%);
-  // filter: brightness(0) saturate(100%) invert(26%) sepia(8%) saturate(777%)
-  //   hue-rotate(217deg) brightness(94%) contrast(93%);
-  filter: brightness(0) saturate(100%) invert(29%) sepia(16%) saturate(734%)
-    hue-rotate(176deg) brightness(102%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(85%) sepia(31%) saturate(139%) hue-rotate(202deg)
+    brightness(105%) contrast(105%);
+}
+
+.starwheel-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* hides horizontal overflow */
+  pointer-events: none; /* ensures interactions go through the container */
+  z-index: -50;
 }
 
 .starwheel {
-  // width: 100%;
+  width: 100%;
   overflow: hidden;
   pointer-events: none;
 
   svg {
-    z-index: -1;
+    z-index: -50;
     display: block;
     position: absolute;
     left: 50%;
-    // bottom: -50%;
-    // size: 400vw;
+    top: -600%;
+    size: 400vw;
     width: 700vw;
-    height: 700vh; // Added this to control the height of the SVG, making it larger
+    height: 700vh;
     margin-left: -350vw;
     animation-name: starwheel;
     animation-duration: 1000s;
