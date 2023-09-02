@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import { FaGoogle, FaGithubAlt, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { RESUME_FILENAME } from '~/constants';
+import { FaGoogle, FaGithubAlt, FaLinkedinIn } from 'react-icons/fa';
 
+import { RESUME_FILENAME } from '~/constants';
 import { ThemeSwitch } from '~/components/theme-switch';
 
 export const Navbar = () => {

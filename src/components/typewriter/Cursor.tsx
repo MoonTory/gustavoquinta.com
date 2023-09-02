@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import styles from './styles.module.css';
 
 export type CursorProps = {
@@ -15,7 +16,7 @@ const MemoizedCursor: React.FC<CursorProps> = ({
   return (
     <span
       style={{ color: cursorColor }}
-      className={`${styles.blinkingCursor} ${cursorBlinking ? styles.blinking : ''}`}
+      className={clsx(styles.blinkingCursor, cursorBlinking && styles.blinking)}
     >
       {cursorStyle}
     </span>
