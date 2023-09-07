@@ -7,7 +7,7 @@ import './celestial-body.css';
 import { useScrollParallax } from '~/utils';
 
 function CelestialImage({ dark, delay = 0 }: { dark: boolean; delay: number }) {
-  const { y } = useScrollParallax(20000);
+  const ref = useScrollParallax<HTMLImageElement>(15000);
 
   const key = dark ? 'moon' : 'sun';
   const src = dark ? '/images/moon.png' : '/images/sun.png';
@@ -16,11 +16,9 @@ function CelestialImage({ dark, delay = 0 }: { dark: boolean; delay: number }) {
 
   return (
     <motion.img
+      ref={ref}
       key={key}
       src={src}
-      style={{
-        transform: `translateY(${y}px)`
-      }}
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

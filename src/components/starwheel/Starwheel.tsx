@@ -10,11 +10,11 @@ export const Starwheel: React.FC = () => {
 };
 
 export const AnimatedStarwheel = () => {
-  const { y } = useScrollParallax(40000);
+  const ref = useScrollParallax<HTMLDivElement>(25000);
 
   return (
     <motion.div
-      style={{ transform: `translateY(${y}px)` }}
+      ref={ref}
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
