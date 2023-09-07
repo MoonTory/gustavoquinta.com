@@ -16,15 +16,46 @@ export const education: Education[] = [
   }
 ];
 
+const workExperience = {
+  position: 'Senior Software Consultant',
+  company: 'Oceans Code Experts',
+  type: 'part-time',
+  location: 'Remote',
+  content: [
+    'As a Senior Software Consultant at Oceans Code Experts, I offered specialized guidance and support to a diverse set of clients seeking to develop or improve their software solutions. I was the go-to resource for not only evaluating existing systems but also designing new, scalable solutions tailored to specific business needs. My consultation activities spanned the gamut from initial meetings and requirement gathering to system design and architectural planning.',
+
+    'One of the core aspects of my role involved providing actionable, technical advice to both clients and internal team members. My expertise influenced crucial decisions on technology stacks, system architecture, and best coding practices. I played an essential role in bridging the gap between business requirements and technical execution, offering actionable insights that enhanced project outcomes.',
+
+    'To provide the best service, I maintained a strong commitment to staying current with the latest industry trends and technological advancements. This proactive approach to continued learning ensured that the advice I offered was both relevant and future-proof, giving our clients a competitive edge in their respective markets.'
+  ],
+  startDate: 'May 2022',
+  endDate: 'Aug 2022',
+  url: 'https://oceanscodeexperts.com/'
+};
+
 export const experience: WorkExperience[] = [
+  // {
+  //   position: 'Senior Software Engineer',
+  //   company: 'Dev.Pro',
+  //   type: 'full-time',
+  //   location: 'Remote',
+  //   content: [
+  //     `Develop and maintain software systems using Angular, Nodejs, Docker, and Typescript. I participated in code reviews, troubleshooting, and aimed to improve my skills in new technologies.`,
+  //     `Collaborated with team members to deliver projects on time and contribute to the company's knowledge base by documenting best practices. Worked with clients such as Inveniam & Global Payments.`
+  //   ],
+  //   startDate: 'May 2022',
+  //   endDate: 'NOW',
+  //   url: 'https://dev.pro/'
+  // },
   {
     position: 'Senior Software Engineer',
     company: 'Dev.Pro',
     type: 'full-time',
     location: 'Remote',
     content: [
-      `Develop and maintain software systems using Angular, Nodejs, Docker, and Typescript. I participated in code reviews, troubleshooting, and aimed to improve my skills in new technologies.`,
-      `Collaborated with team members to deliver projects on time and contribute to the company's knowledge base by documenting best practices. Worked with clients such as Inveniam & Global Payments.`
+      "As a Senior Software Engineer, I have focused on developing and maintaining a range of software systems. My technology stack primarily consists of Angular, Node.js, Docker, and Typescript. My role isn't just restricted to coding; I actively engage in code reviews to maintain high coding standards and troubleshoot issues that arise during development cycles.",
+      "Collaboration is a key part of my work ethic. I regularly work with team members to ensure that projects are completed on time and meet the client's requirements. I also contribute to the team's collective knowledge by documenting best practices, making sure that my learnings benefit not just me but the entire team.",
+      "Over the course of my time at Dev.Pro, I've had the opportunity to work with notable clients such as Inveniam and Global Payments. Handling high-stakes projects for these clients has allowed me to stretch my technical skills and learn to manage client expectations effectively."
     ],
     startDate: 'May 2022',
     endDate: 'NOW',
@@ -36,7 +67,9 @@ export const experience: WorkExperience[] = [
     type: 'part-time',
     location: 'Remote',
     content: [
-      `Provided expert-level guidance and support to clients in developing software solutions. Consulted with clients, designed and developed solutions, analyzed systems, and provided technical guidance to team members. I stayed up-to-date with the latest industry trends.`
+      'As a Senior Software Consultant at Oceans Code Experts, my role was multifaceted. I offered expert-level advice to our clients on developing tailored software solutions. This involved understanding the client’s specific challenges and needs before architecting a solution that aligned with their goals.',
+      'Beyond consulting, my responsibilities also included hands-on design and development work. I engaged in system analysis to evaluate the existing infrastructure and identify areas for improvement, ensuring the delivered solutions were both robust and scalable.',
+      'Keeping up with the latest industry trends was critical to providing high-value services. I continuously updated myself on new technologies and methodologies to offer current and effective guidance to both clients and team members.'
     ],
     startDate: 'May 2022',
     endDate: 'Aug 2022',
@@ -48,7 +81,9 @@ export const experience: WorkExperience[] = [
     type: 'full-time',
     location: 'Remote',
     content: [
-      `I worked in the "Staff Augmentation Program," collaborating closely with the client team at Blackspectacles on the development of their new product, Spectacular. As a full-stack engineer, I utilized various technologies, frameworks, and libraries such as Loopback4, Node.js, React.js, Material-UI, and PostgreSQL.`
+      'During my tenure as a Software Engineer at BairesDev, I was a key contributor to the "Staff Augmentation Program." I worked in close collaboration with the client team at Blackspectacles, focusing on the development of their new product named Spectacular. The partnership was not just about code but involved a deep understanding of the client’s needs to deliver a product that met their specifications.',
+      'As a full-stack engineer, I wore multiple hats and covered a broad spectrum of tasks. I utilized a range of technologies, frameworks, and libraries that included Loopback4, Node.js, React.js, Material-UI, and PostgreSQL. My role involved everything from backend development to crafting intuitive user interfaces.',
+      'My experience at BairesDev was a blend of technical depth and cross-functional collaboration. Working on Spectacular provided me with a comprehensive understanding of the software development life cycle, right from the ideation phase through to deployment.'
     ],
     startDate: 'Feb 2021',
     endDate: 'June 2022',
@@ -60,8 +95,9 @@ export const experience: WorkExperience[] = [
     type: 'full-time',
     location: 'Goiania, Goias',
     content: [
-      `I successfully planned, organized, and executed the migration of a monolithic Node.js application into a distributed serverless architecture. This involved harnessing the latest cloud technologies from AWS, including Cognito, Appsync, Elasticache, ECS on Fargate, Lambdas, SQS, SNS, and more.`,
-      `Throughout the process, I provided oversight for the team's development and ensured effective management of the project. By leveraging these cutting-edge technologies, I streamlined the application's performance, scalability, and security, resulting in improved effciency and enhanced user experience.`
+      'At MusicPlayce, one of my most significant responsibilities as a Cloud Architect was the migration of a monolithic Node.js application into a modern, distributed serverless architecture. The task required thorough planning, organization, and execution. I utilized a variety of AWS services, including but not limited to Cognito, Appsync, Elasticache, ECS on Fargate, Lambdas, SQS, and SNS.',
+      'I took on a leadership role in overseeing the development efforts of the team and ensuring effective project management. My responsibilities extended beyond the technical aspects, as I was deeply involved in guiding the team through the migration process, providing them with the necessary training and insights.',
+      'The migration was more than just a technical shift; it had a meaningful impact on the business. Leveraging these advanced cloud technologies helped us significantly improve the performance, scalability, and security of the application. This, in turn, resulted in a more efficient system and an enhanced user experience, fulfilling key business objectives.'
     ],
     startDate: 'Apr 2020',
     endDate: 'June 2021',
@@ -73,7 +109,9 @@ export const experience: WorkExperience[] = [
     type: 'full-time',
     location: 'Goiania, Goias',
     content: [
-      `Developed SASS 'Infinity', a comprehensive platform in collaboration with Caiapó, a leading construction company, to effectively manage large-scale construction projects such as highways and bridges. Utilized a powerful technology stack including Azure, .NET Core, MYSQL, and Angular 8.`
+      "During my time at TocTec Assessoria, I was instrumental in the development of 'Infinity,' a SaaS platform designed to revolutionize the way large-scale construction projects are managed. This initiative was in close collaboration with Caiapó, a leading construction company. Together, we aimed to create a solution that would make the management of massive projects like highways and bridges more efficient and streamlined.",
+      "In building 'Infinity,' my role was far-reaching, covering both back-end and front-end development tasks. I worked with a robust technology stack that included Azure for cloud computing, .NET Core for back-end services, MySQL for database management, and Angular 8 for front-end development.",
+      "The experience afforded me a unique blend of technical challenges and client-facing interactions. 'Infinity' wasn't just about coding; it was about understanding the intricate requirements of the construction industry and tailoring the technology to meet those needs. The project was a testament to the power of collaborative software development to solve real-world challenges."
     ],
     startDate: 'Aug 2019',
     endDate: 'Apr 2020',
@@ -85,7 +123,9 @@ export const experience: WorkExperience[] = [
     type: 'full-time',
     location: 'Goiania, Goias',
     content: [
-      `As a skilled full-stack engineer, I actively participated in customer meetings, providing valuable insights and conducting thorough requirement surveys. Additionally, I carried out various development tasks, ensuring meticulous planning and system design. My focus revolved around collaborating with FisioAvalia, leveraging my expertise to deliver high-quality solutions and contribute to their ongoing success.`
+      'At BigApp, I embraced a holistic approach to software engineering, where my responsibilities stretched beyond mere coding. As a full-stack engineer, I actively engaged with customers during meetings to understand their needs, provide valuable technical insights, and conduct comprehensive requirement surveys. This helped me build solutions that were not only technically sound but also aligned with customer objectives.',
+      'I was deeply involved in the planning and system design stages, ensuring that the architecture was robust and scalable. My day-to-day tasks included a mix of front-end and back-end development activities, all of which were guided by meticulous planning.',
+      'A notable project during my tenure at BigApp was my collaboration with FisioAvalia. Leveraging my technical expertise, I contributed to delivering high-quality software solutions that significantly aided in their ongoing success. This project allowed me to blend my technical skills with a customer-centric approach, ensuring that the solutions we delivered met the client’s specific needs and expectations.'
     ],
     startDate: 'Nov 2018',
     endDate: 'June 2019',
@@ -97,8 +137,9 @@ export const experience: WorkExperience[] = [
     type: 'full-time',
     location: 'Goiania, Goias',
     content: [
-      `I used Python for analyzing large datasets from spreadsheets, aiding in business operation optimization. I was trained in the use of proprietary tools for maintaining a sizable legacy code base, contributing to improved system performance.`,
-      `This role enhanced my practical knowledge of software development within a professional, agile team environment, and fostered my skills in problem-solving and bug resolution.`
+      'As a Junior Software Engineer at BTCC Conexão Cliente, my primary responsibility involved using Python to analyze large datasets from spreadsheets. The goal was to extract actionable insights that could be used to optimize various business operations. I gained hands-on experience in data manipulation and analysis, which became a crucial part of the business decision-making process.',
+      'In addition to data analysis, I was trained in maintaining a sizable legacy code base using proprietary tools. My contributions led to noticeable improvements in system performance, as I helped in refactoring and optimizing the code.',
+      'Working at BTCC Conexão Cliente was an enriching experience that went beyond technical learning. Being a part of a professional, agile team allowed me to hone my problem-solving skills, especially in the areas of bug resolution and system improvement. The role served as an excellent foundation, helping me gain practical knowledge of software development in a fast-paced, collaborative environment.'
     ],
     startDate: 'June 2017',
     endDate: 'Oct 2018'
