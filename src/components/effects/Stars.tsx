@@ -84,18 +84,24 @@ const Star = ({
 
   const widthHeight = getRandValue(6, 1);
 
+  const defaultStyles = {
+    width: widthHeight,
+    height: widthHeight,
+    right: horizontalPos,
+    bottom: bottomInitial
+  };
+
+  const style = isMobile
+    ? { ...defaultStyles }
+    : {
+        y,
+
+        animationDuration: `${getRandValue(10)}s`,
+        ...defaultStyles
+      };
+
   return (
-    <motion.div
-      className="rounded-full bg-white animate-pulse absolute z-0"
-      style={{
-        width: widthHeight,
-        height: widthHeight,
-        right: horizontalPos,
-        bottom: bottomInitial,
-        y: isMobile ? undefined : y,
-        animationDuration: isMobile ? undefined : `${getRandValue(10)}s`
-      }}
-    />
+    <motion.div className="rounded-full bg-white animate-pulse absolute z-0" style={style} />
   );
 };
 
