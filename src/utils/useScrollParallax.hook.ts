@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { throttle } from 'lodash';
+import { debounce } from 'lodash';
 
 export const useScrollParallax = <T extends HTMLElement = HTMLElement>(
   maxScroll = 12000,
@@ -12,7 +12,7 @@ export const useScrollParallax = <T extends HTMLElement = HTMLElement>(
   useEffect(() => {
     let animationFrameId: number | null = null;
 
-    const handleScroll = () => {
+    const handleScroll = debounce(() => {
       // Cancel any existing animation frame
       if (animationFrameId !== null) {
         cancelAnimationFrame(animationFrameId);
@@ -28,16 +28,14 @@ export const useScrollParallax = <T extends HTMLElement = HTMLElement>(
           elementRef.current.style.transform = `translateY(${newY}px)`;
         }
       });
-    };
-
-    const throttledHandleScroll = throttle(handleScroll, 16);
+    }, 16);
 
     // Attach the event listener
-    window.addEventListener('scroll', throttledHandleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       // Cleanup
-      window.removeEventListener('scroll', throttledHandleScroll);
+      window.removeEventListener('scroll', handleScroll);
       if (animationFrameId !== null) {
         cancelAnimationFrame(animationFrameId);
       }
