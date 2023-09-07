@@ -65,6 +65,8 @@ export const Stars = React.memo(StarsMemo, () => {
   return true;
 });
 
+const getRandValue = (max: number, min = 0) => Math.floor(Math.random() * (max - min) + min);
+
 const Star = ({
   scrollPos = [0, 8250],
   scrollParams = [0, -2000],
@@ -76,13 +78,10 @@ const Star = ({
   horizontalPos: string;
   bottomInitial: string;
 }) => {
+  const [widthHeight] = useState(getRandValue(6, 1));
   const { isMobile } = useIsMobile();
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, scrollPos, scrollParams);
-
-  const getRandValue = (max: number, min = 0) => Math.floor(Math.random() * (max - min) + min);
-
-  const widthHeight = getRandValue(6, 1);
 
   const defaultStyles = {
     width: widthHeight,
@@ -95,7 +94,6 @@ const Star = ({
     ? { ...defaultStyles }
     : {
         y,
-
         animationDuration: `${getRandValue(10)}s`,
         ...defaultStyles
       };
