@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
-
 import { useScroll, useSpring, motion } from 'framer-motion';
+import { useIsMobile } from '~/utils';
 
 export const Progressbar = () => {
+  const { isMobile } = useIsMobile();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 50,
@@ -13,7 +14,7 @@ export const Progressbar = () => {
 
   return (
     <>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+      <motion.div className="progress-bar" style={{ scaleX: isMobile ? undefined : scaleX }} />
     </>
   );
 };
