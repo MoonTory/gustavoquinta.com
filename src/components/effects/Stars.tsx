@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
+import { useIsMobile } from '~/utils';
 
 const NUM_STARS = 150;
 
@@ -75,6 +76,7 @@ const Star = ({
   horizontalPos: string;
   bottomInitial: string;
 }) => {
+  const { isMobile } = useIsMobile();
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, scrollPos, scrollParams);
 
@@ -86,12 +88,12 @@ const Star = ({
     <motion.div
       className="rounded-full bg-white animate-pulse absolute z-0"
       style={{
-        y,
-        animationDuration: `${getRandValue(10)}s`,
         width: widthHeight,
         height: widthHeight,
+        right: horizontalPos,
         bottom: bottomInitial,
-        right: horizontalPos
+        y: isMobile ? undefined : y,
+        animationDuration: isMobile ? undefined : `${getRandValue(10)}s`
       }}
     />
   );
