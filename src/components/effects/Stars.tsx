@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
-import { useIsMobile, useScrollParallax } from '~/utils';
+import { useIsMobile } from '~/utils';
 
 const NUM_STARS = 150;
 
@@ -78,8 +78,10 @@ const Star = ({
   horizontalPos: string;
   bottomInitial: string;
 }) => {
-  const ref = useScrollParallax<HTMLDivElement>(40000);
   const [widthHeight] = useState(getRandValue(6, 1));
+  const { isMobile } = useIsMobile();
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, scrollPos, scrollParams);
 
   const defaultStyles = {
     width: widthHeight,
@@ -88,12 +90,16 @@ const Star = ({
     bottom: bottomInitial
   };
 
+  const style = isMobile
+    ? { ...defaultStyles }
+    : {
+        y,
+        animationDuration: `${getRandValue(10)}s`,
+        ...defaultStyles
+      };
+
   return (
-    <motion.div
-      ref={ref}
-      className="rounded-full bg-white animate-pulse absolute z-0"
-      style={defaultStyles}
-    />
+    <motion.div className="rounded-full bg-white animate-pulse absolute z-0" style={style} />
   );
 };
 
