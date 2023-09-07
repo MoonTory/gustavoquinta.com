@@ -1,11 +1,13 @@
 'use client';
 import React, { useContext } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeContext } from '~/context';
 
+import './celestial-body.css';
+import { useScrollParallax } from '~/utils';
+
 function CelestialImage({ dark, delay = 0 }: { dark: boolean; delay: number }) {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 12000], [0, -950]);
+  const { y } = useScrollParallax(20000);
 
   const key = dark ? 'moon' : 'sun';
   const src = dark ? '/images/moon.png' : '/images/sun.png';
@@ -16,7 +18,9 @@ function CelestialImage({ dark, delay = 0 }: { dark: boolean; delay: number }) {
     <motion.img
       key={key}
       src={src}
-      style={{ y }}
+      style={{
+        transform: `translateY(${y}px)`
+      }}
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -27,7 +31,7 @@ function CelestialImage({ dark, delay = 0 }: { dark: boolean; delay: number }) {
           ease: 'easeInOut'
         }
       }}
-      className="absolute inset-0 w-full h-full"
+      className="celestial-image"
     />
   );
 }

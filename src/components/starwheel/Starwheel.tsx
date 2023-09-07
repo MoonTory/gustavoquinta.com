@@ -1,20 +1,20 @@
 'use client';
 import * as React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import './styles.scss';
+import { useScrollParallax } from '~/utils';
 
 export const Starwheel: React.FC = () => {
   return <MemoizedStarwheel />;
 };
 
 export const AnimatedStarwheel = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 12000], [0, -650]);
+  const { y } = useScrollParallax(40000);
 
   return (
     <motion.div
-      style={{ y }}
+      style={{ transform: `translateY(${y}px)` }}
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
