@@ -10,7 +10,7 @@ export const Starwheel: React.FC = () => {
 };
 
 export const AnimatedStarwheel = () => {
-  const ref = useScrollParallax<HTMLDivElement>(25000);
+  const ref = useScrollParallax<HTMLDivElement>(40000);
 
   return (
     <motion.div
