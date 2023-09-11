@@ -13,7 +13,7 @@ type StarData = {
   bottomInitial: string;
 };
 
-function StarsMemo() {
+export function Stars() {
   const [stars, setStars] = useState<StarData[]>([]);
 
   const generateStars = () => {
@@ -61,9 +61,9 @@ function StarsMemo() {
   );
 }
 
-export const Stars = React.memo(StarsMemo, () => {
-  return true;
-});
+// export const Stars = React.memo(StarsMemo, () => {
+//   return true;
+// });
 
 const getRandValue = (max: number, min = 0) => Math.floor(Math.random() * (max - min) + min);
 
